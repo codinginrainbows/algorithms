@@ -12,7 +12,7 @@
 
 // todo: apply the humming distance algorithm.
 
-function oneTwoThree(a) {
+const oneTwoThree = (a) => {
     const word = a.split('') 
     let isOne = false
     let isTwo = false

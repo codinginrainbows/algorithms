@@ -10,7 +10,7 @@
     For each test case, print a message informing if the second number fit ("encaixa" in portughese) or didn't fit ("nao encaixa") in the first number. 
 */
 
-function FitOrDontFit(a, b) {
+const FitOrDontFit = (a, b) => {
     let doesItFit = false
 
     let lastDigitOfA = a.toString().split('')[a.toString().length-1]
