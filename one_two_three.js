@@ -10,57 +10,36 @@
     For each test case, print the numerical value of the word.
 */
 
-// todo: apply the humming distance algorithm.
-
 const oneTwoThree = (a) => {
-    const word = a.split('') 
-    let isOne = false
-    let isTwo = false
-    let isThree = false
-    
-    if (a.length === 5) {
-        let threeCounter = 0
-        
-        word.forEach((letter, index) => {
-            (index === 0 && letter.includes('t')) && threeCounter++
-            (index === 1 && letter.includes('h')) && threeCounter++
-            (index === 2 && letter.includes('r')) && threeCounter++
-            (index === 3 && letter.includes('e')) && threeCounter++
-            (index === 4 && letter.includes('e')) && threeCounter++
-        })
-        
-        threeCounter >= 4 && (isThree = true)
-    }
-    
-    if (a.length === 3) {
-        let oneCounter = 0
-        let twoCounter = 0
-        
-        word.forEach((letter, index) => {
-            (index === 0 && letter.includes('o')) && oneCounter++ || (index === 0 && letter.includes('t')) && twoCounter++
-            (index === 1 && letter.includes('n')) && oneCounter++ || (index === 1 && letter.includes('w')) && twoCounter++
-            (index === 2 && letter.includes('e')) && oneCounter++ || (index === 2 && letter.includes('o')) && twoCounter++
-        })
-        
-        oneCounter >= 2 && (isOne = true)
-        twoCounter >= 2 && (isTwo = true)
+    let isOne = 0
+    let isTwo = 0
+    let isThree = 0
+
+    for (let i in a) {
+        a[i] == 'one'[i] && isOne++
+        a[i] == 'two'[i] && isTwo++
+        a[i] == 'three'[i] && isThree++
     }
 
-    return isOne ? console.log('1') : (isTwo ? console.log('2') : (isThree ? console.log('3') : console.log('none')))
+    if (isOne >= 2) return 1
+    if (isTwo >= 2) return 2
+    if (isThree >= 4) return 3
+
+    return 0
 }
 
-oneTwoThree('one') //should return the number 1
-oneTwoThree('two') //should return the number 2
-oneTwoThree('three') //should return the number 3
+console.log(oneTwoThree('one')) //should return the number 1
+console.log(oneTwoThree('two')) //should return the number 2
+console.log(oneTwoThree('three')) //should return the number 3
 
-oneTwoThree('owe') //should return the number 1
-oneTwoThree('too') //should return the number 2
-oneTwoThree('theee') //should return the number 3
+console.log(oneTwoThree('owe')) //should return the number 1
+console.log(oneTwoThree('too')) //should return the number 2
+console.log(oneTwoThree('theee')) //should return the number 3
 
-oneTwoThree('noe') //should return none
-oneTwoThree('wot') //should return none
-oneTwoThree('ehtee') //should return none
+console.log(oneTwoThree('noe')) //should return 0
+console.log(oneTwoThree('wot')) //should return 0
+console.log(oneTwoThree('ehtee')) //should return 0
 
-oneTwoThree('gabriel') //should return none
-oneTwoThree('nine') //should return none
-oneTwoThree('elephant') //should return none
+console.log(oneTwoThree('gabriel')) //should return 0
+console.log(oneTwoThree('nine')) //should return 0
+console.log(oneTwoThree('elephant')) //should return 0
