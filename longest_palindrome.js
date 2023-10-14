@@ -7,7 +7,8 @@
     longestPalindrome("abba") --> "abba"
     longestPalindrome("a") --> "a"
 */
-function longestPalindrome(s) {
+
+const longestPalindrome = (s) => {
   let startIndex = 0;
   let maxLength = 1;
 
@@ -33,5 +34,3 @@ function longestPalindrome(s) {
 
   return s.slice(startIndex, startIndex + maxLength);
 }
-
-module.exports = longestPalindrome;

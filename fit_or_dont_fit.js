@@ -11,17 +11,17 @@
 */
 
 const FitOrDontFit = (a, b) => {
-    let doesItFit = false
+    a = a.toString();
+    b = b.toString();
 
-    let lastDigitOfA = a.toString().split('')[a.toString().length-1]
-    let lastDigitOfB = b.toString().split('')[b.toString().length-1]
+    if (a[a.length-1] == b[b.length-1]) return true
 
-    lastDigitOfA === lastDigitOfB && (doesItFit = true)
-
-    return doesItFit ? 'it fits' : 'it does not fit'
+    return false
 }
 
-FitOrDontFit(543455213, 543)
-FitOrDontFit(28378, 34341)
-FitOrDontFit(187, 20970)
-FitOrDontFit(7, 1234567)
+console.log(FitOrDontFit(543455213, 543)) // should return true
+console.log(FitOrDontFit(28378, 34341)) // should return false
+console.log(FitOrDontFit(187, 20970)) // should return false
+console.log(FitOrDontFit(7, 1234567)) // should return true
+console.log(FitOrDontFit(26, 873746)) // should return true
+console.log(FitOrDontFit(12, 789)) // should return false
