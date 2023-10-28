@@ -8,7 +8,7 @@
     6. if value in pos less than value in same pos on the other array, push into result
     7. walk with pointer on the array that had the minor value
 
-    PART 2 OF MERGE FUN
+    PART 2 OF MERGE FUNC
     1. if index is minor than array.lenth just push everything into result
     2. do step above for both arrays
     3. return result
@@ -39,17 +39,17 @@ const mergeArrays = (array1, array2) => {
         array1[i] < array2[j] ? (result.push(array1[i]), i++) : (result.push(array2[j]), j++)
     }
 
-    while (i < array1.length) {
-        result.push(array1[i])
-        i++
-    }
+    // while (i < array1.length) {
+    //     result.push(array1[i])
+    //     i++
+    // }
     
-    while (j < array2.length) {
-        result.push(array2[j])
-        j++
-    }
+    // while (j < array2.length) {
+    //     result.push(array2[j])
+    //     j++
+    // }
 
-    return result
+    return result.concat(array1.slice(i), array2.slice(j));
 }
 
 console.log(mergeSort([
